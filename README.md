@@ -1,7 +1,7 @@
-#React Blog
+<h1>React Blog</h1>
 A simple blog created with ReactJS and...
 
-##Getting Started
+<h2>Getting Started</h2>
 
 To get you started you can simply clone the #React-blog repo and install the dependencies:
 
@@ -15,7 +15,7 @@ We have preconfigured npm command to automatically install all dependencies, sim
  <code> npm install </code>
  <h3>4# Start app with: </h3>
   <code> npm start </code>
-## Other Available Scripts
+<h2> Other Available Scripts</h2>
 
 In the project directory, you can run:
 
