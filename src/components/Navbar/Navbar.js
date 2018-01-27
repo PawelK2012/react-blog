@@ -52,7 +52,7 @@ class Navbar extends Component {
             to={'/'}>
             <MenuItem
               onClick={this.toggle}
-              primaryText={'News Feed'}
+              primaryText={'News-Feed'}
             />
           </Link>
           <Link

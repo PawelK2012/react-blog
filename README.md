@@ -8,12 +8,12 @@ To get you started you can simply clone the #React-blog repo and install the dep
 <h3>#1 Clone React-Blog</h3>
 Clone the React-Blog repository using git:
  <code>git clone https://github.com/PawelK2012/Budget-web-client.git </code>
-<h3>2# cd to DIR</h3>
+<h3>#2 cd to DIR</h3>
  <code>cd react-blog  </code>
-<h3>3# Install Dependencies</h3>
+<h3>#3 Install Dependencies</h3>
 We have preconfigured npm command to automatically install all dependencies, simply:
  <code> npm install </code>
- <h3>4# Start app with: </h3>
+ <h3>#4 Start app with: </h3>
   <code> npm start </code>
 <h2> Other Available Scripts</h2>
 
