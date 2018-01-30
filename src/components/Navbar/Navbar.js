@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import Drawer from 'material-ui/Drawer'
 import MenuItem from 'material-ui/MenuItem'
 import Divider from 'material-ui/Divider'
-import { NavToggleButton } from './NavbarStyled'
+import AppBar from 'material-ui/AppBar'
 ///stateless functional components are functions that taking proertis information
 //// and returns jsx element
 ///// stateless componenets can't access this
@@ -23,9 +23,16 @@ import { NavToggleButton } from './NavbarStyled'
 
 class Navbar extends Component {
   state = {
+    title: 'React Blog',
     open: false,
     width: 250
   }
+
+  styles = {
+    appBar: {
+        background: '#9C27B0'
+    }
+};
 
   toggle = () => {
     this.setState((prevState, props) => {
@@ -38,15 +45,19 @@ class Navbar extends Component {
   render() {
     return (
       <div>
-        <NavToggleButton
-          toggle={this.toggle}
-          width={this.state.width}
-          open={this.state.open}
+        <AppBar
+          title={this.state.title}
+          iconClassNameRight="muidocs-icon-navigation-expand-more"
+          onLeftIconButtonClick={this.toggle}
+          style={this.styles.appBar}
         />
         <Drawer
           open={this.state.open}
           width={this.state.width}
         >
+         <AppBar title={this.state.title} 
+         onLeftIconButtonClick={this.toggle}
+         style={this.styles.appBar}/>
           <Divider />
           <Link
             to={'/'}>

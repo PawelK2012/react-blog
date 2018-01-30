@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
-import FloatingActionButton from 'material-ui/FloatingActionButton'
-import Menu from 'material-ui/svg-icons/navigation/menu'
+//import FloatingActionButton from 'material-ui/FloatingActionButton'
+//import Menu from 'material-ui/svg-icons/navigation/menu'
 
 const StayVisible = styled.div`
 position: absolute;
@@ -9,17 +9,17 @@ position: absolute;
   transition: margin .2s;
   z-index: 99999;
 `
-export const NavToggleButton = (props) => {
-    return (
-        <StayVisible
-        {...props}
-        >
-            <FloatingActionButton
-             onClick={props.toggle}
-            >
-                <Menu />
-            </FloatingActionButton>
-        </StayVisible>
+// export const NavToggleButton = (props) => {
+//     return (
+//         <StayVisible
+//         {...props}
+//         >
+//             <FloatingActionButton
+//              onClick={props.toggle}
+//             >
+//                 <Menu />
+//             </FloatingActionButton>
+//         </StayVisible>
 
-    )
-}
+//     )
+// }
