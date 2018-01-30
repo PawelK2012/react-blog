@@ -1,19 +1,13 @@
 import React, { Component } from 'react'
-import { Card, CardActions, CardHeader, CardMedia, CardTitle, CardText } from 'material-ui/Card';
-import FlatButton from 'material-ui/FlatButton';
+import { Card, CardHeader, CardMedia, CardTitle, CardText } from 'material-ui/Card'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 
-
 class NewsItem extends Component {
-
-    constructor(props) {
-        super(props);
-    }
 
     render() {
         return (
             <MuiThemeProvider>
-                <Card>
+                <Card className="card">
                     <CardHeader
                         title={this.props.title}
                         subtitle={this.props.subTitle}
@@ -25,10 +19,6 @@ class NewsItem extends Component {
                     </CardMedia>
                     <CardTitle title={this.props.title} subtitle={this.props.subTitle} />
                     <CardText>{this.props.text}</CardText>
-                    <CardActions>
-                        <FlatButton label="Read more" />
-                        <FlatButton label="Edit" />
-                    </CardActions>
                 </Card>
             </MuiThemeProvider>
         )

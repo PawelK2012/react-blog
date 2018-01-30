@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
-import { connect, PromiseState } from 'react-refetch'
-import NewsItem from '../components/NewsItem/NewsItem';
+import { connect } from 'react-refetch'
+import NewsList from '../components/NewsList/NewsList'
 
 class NewsFeed extends Component {
+  
   render() {
     const { newsFetch } = this.props
     if (newsFetch.pending) {
@@ -10,15 +11,17 @@ class NewsFeed extends Component {
     } else if (newsFetch.rejected) {
       return <h1>Rejected <span error={newsFetch.reason}></span></h1>
     } else if (newsFetch.fulfilled) {
-      console.log(newsFetch, " + ")
       return (
-        <div>
-          <h1> data {newsFetch.value[0].owner}</h1>
-          {newsFetch.value.map((newsItm, i) =>
-            <NewsItem key={i}
-              {...newsItm} />
-          )}
-        </div>
+        <NewsList {...newsFetch}/>
+        //this.renderList(newsFetch)
+        // <div className="news-feed-container">
+        //   <h1>News Feed</h1>
+        //   this.renderList
+        //   {/* {newsFetch.value.map((newsItm, i) =>
+        //     <NewsList key={i}
+        //       {...newsItm} />
+        //   )} */}
+        // </div>
       )
     }
   }

@@ -5,3 +5,11 @@ h1{
 .container {
     margin: 0% 5%;
 }
+
+.news-feed-container {
+    margin-top: 30px;
+}
+
+.card{
+    margin-bottom: 20px;
+}
