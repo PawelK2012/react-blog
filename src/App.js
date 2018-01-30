@@ -1,5 +1,4 @@
 import React from 'react'
-//import ReactDOM from 'react-dom'
 import NewsFeed from './containers/NewsFeed'
 import Profile from './containers/Profile'
 import Admin from './containers/Admin'
