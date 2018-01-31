@@ -9,7 +9,7 @@ const styles = {
     padding: 10,
   },
   tabsUnderline: {
-    background: '#FAFAFA'
+    background: 'rgb(0, 188, 212)'
   },
   tabs: {
     background: '#616161'
