@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-refetch'
-import NewsList from '../components/NewsList/NewsList'
+import NewsList from '../components/News/NewsList'
 import CircularProgress from 'material-ui/CircularProgress'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import SnackBar from '../components/SnackBar/SnackBar'

@@ -41,7 +41,6 @@ class NewsList extends Component {
                                 titlePosition="top"
                                 titleStyle={styles.title}
                                 titleBackground="rgba(0, 0, 0, 0.4)"
-                                titleBackground="linear-gradient(to bottom, rgba(0,0,0,0.7) 0%,rgba(0,0,0,0.3) 70%,rgba(0,0,0,0) 100%)"
                                 cols={tile.featured ? 2 : 1}
                                 rows={tile.featured ? 2 : 1}
                             >

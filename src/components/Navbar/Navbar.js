@@ -30,7 +30,7 @@ class Navbar extends Component {
 
   styles = {
     appBar: {
-        background: '#9C27B0'
+        background: '#212121'
     }
 };
 
