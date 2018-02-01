@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import { connect } from 'react-refetch'
-import NewsItemMasterDetail from '../components/News/NewsItemMasterDetail'
+import NewsItemMasterDetail from '../presentational/News/NewsItemMasterDetail'
 import CircularProgress from 'material-ui/CircularProgress'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
-import SnackBar from '../components/SnackBar/SnackBar'
+import SnackBar from '../presentational/SnackBar/SnackBar'
 
 class NewsItem extends Component {
 

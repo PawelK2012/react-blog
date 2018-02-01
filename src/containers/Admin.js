@@ -2,7 +2,8 @@ import React, { Component } from 'react'
 import { Tabs, Tab } from 'material-ui/Tabs'
 import SwipeableViews from 'react-swipeable-views'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
-import CreateNewsItem from '../components/News/CreateNewsItem'
+import CreateNewsItem from '../presentational/News/CreateNewsItem'
+import RaisedButton from 'material-ui/RaisedButton'
 
 const styles = {
   slide: {
@@ -20,8 +21,10 @@ class Admin extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      slideIndex: 0,
+      slideIndex: 0
     };
+    //this.NewsService = new NewsService()
+    this.addNews = this.addNews.bind(this)
   }
 
   handleChange = (value) => {
@@ -29,6 +32,12 @@ class Admin extends Component {
       slideIndex: value,
     });
   };
+
+  addNews(newNews) {
+    console.log(newNews)
+    // this.setState({
+    // })
+  }
 
   render() {
     return (
@@ -49,11 +58,11 @@ class Admin extends Component {
             onChangeIndex={this.handleChange}
           >
             <div style={styles.slide}>
-              <CreateNewsItem/>
+              <CreateNewsItem onSave={this.addNews}/>
             </div>
             <div style={styles.slide}>
-              slide n°2
-          </div>
+             slide 2
+            </div>
             <div style={styles.slide}>
               slide n°3
           </div>
