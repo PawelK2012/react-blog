@@ -3,7 +3,9 @@ import { Tabs, Tab } from 'material-ui/Tabs'
 import SwipeableViews from 'react-swipeable-views'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import CreateNewsItem from '../presentational/News/CreateNewsItem'
-import RaisedButton from 'material-ui/RaisedButton'
+import NewsService from '../services/NewsService'
+
+import SnackBar from '../presentational/SnackBar/SnackBar'
 
 const styles = {
   slide: {
@@ -18,12 +20,15 @@ const styles = {
 };
 
 class Admin extends Component {
+
   constructor(props) {
     super(props);
     this.state = {
-      slideIndex: 0
+      slideIndex: 0,
+      showSnackBar: false,
+      responseMsg: ' '
     };
-    //this.NewsService = new NewsService()
+    this.NewsService = new NewsService()
     this.addNews = this.addNews.bind(this)
   }
 
@@ -34,9 +39,12 @@ class Admin extends Component {
   };
 
   addNews(newNews) {
-    console.log(newNews)
-    // this.setState({
-    // })
+    this.setState({ responseMsg: ' ', showSnackBar: false });
+    this.NewsService.post(newNews).then(response => {
+      this.setState({ responseMsg: 'News saved', showSnackBar: true });
+    }).catch(error => {
+      this.setState({ responseMsg: 'News not saved: ' + error.message, showSnackBar: true });
+    });
   }
 
   render() {
@@ -58,10 +66,11 @@ class Admin extends Component {
             onChangeIndex={this.handleChange}
           >
             <div style={styles.slide}>
-              <CreateNewsItem onSave={this.addNews}/>
+              <CreateNewsItem onSave={this.addNews} />
+              {this.state.showSnackBar ? <SnackBar msg={this.state.responseMsg} open={true} /> : null}
             </div>
             <div style={styles.slide}>
-             slide 2
+              slide 2
             </div>
             <div style={styles.slide}>
               slide n°3
@@ -72,5 +81,4 @@ class Admin extends Component {
     )
   }
 }
-
 export default Admin

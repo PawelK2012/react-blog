@@ -3,7 +3,7 @@ import NewsFeed from './containers/NewsFeed'
 import Profile from './containers/Profile'
 import Admin from './containers/Admin'
 import NewsItem from "./containers/NewsItem"
-import Navbar from './components/Navbar/Navbar'
+import Navbar from './presentational/Navbar/Navbar'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import { Switch, Route } from 'react-router-dom'
 import './App.css'

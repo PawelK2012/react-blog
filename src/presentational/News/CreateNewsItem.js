@@ -21,7 +21,6 @@ const styles = {
 };
 
 export const CreateNewsItem = ({ title, subTitle, text, owner, img, featured, onSave }) => {
-  console.log(title, subTitle, text, owner, img, featured)
   let _title, _subTitle, _text, _owner, _img, _featured
 
   const save = (e) => {
