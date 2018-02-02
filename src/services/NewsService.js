@@ -1,9 +1,8 @@
-import { Component } from 'react'
 import axios from 'axios';
 
-class NewsService extends Component {
+class NewsService {
 
-    post = (data) => axios.post('http://localhost:63145/api/messages', {
+    postNews = (data) => axios.post('http://localhost:63145/api/messages', {
         id: this.uuidv4(),
         title: data.title,
         subTitle: data.subTitle,
@@ -12,6 +11,8 @@ class NewsService extends Component {
         owner: data.owner,
         featured: data.featured
     })
+
+    getNews = () => axios.get('http://localhost:63145/api/messages')
 
     uuidv4() {
         return ([1e7] + -1e3 + -4e3 + -8e3 + -1e11).replace(/[018]/g, c =>

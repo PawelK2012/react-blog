@@ -40,7 +40,7 @@ class Admin extends Component {
 
   addNews(newNews) {
     this.setState({ responseMsg: ' ', showSnackBar: false });
-    this.NewsService.post(newNews).then(response => {
+    this.NewsService.postNews(newNews).then(response => {
       this.setState({ responseMsg: 'News saved', showSnackBar: true });
     }).catch(error => {
       this.setState({ responseMsg: 'News not saved: ' + error.message, showSnackBar: true });
