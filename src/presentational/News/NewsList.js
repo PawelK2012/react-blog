@@ -24,6 +24,7 @@ const styles = {
 class NewsList extends Component {
 
     render() {
+        console.log('ttt ',this)
         return (
             <MuiThemeProvider>
                 <div style={styles.root}>
@@ -33,7 +34,7 @@ class NewsList extends Component {
                         padding={1}
                         style={styles.gridList}
                     >
-                        {this.props.value.map((tile) => (
+                        {this.props.data.map((tile) => (
                             <GridTile
                                 key={tile.img}
                                 title={<Link to={{ pathname: tile.id }}>{tile.title}</Link>}

@@ -4,29 +4,39 @@ import NewsList from '../presentational/News/NewsList'
 import CircularProgress from 'material-ui/CircularProgress'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import SnackBar from '../presentational/SnackBar/SnackBar'
-
+import NewsService from '../services/NewsService'
+let news;
 class NewsFeed extends Component {
 
+  constructor(props) {
+    super(props);
+    this.state = {
+      responseMsg: ' ',
+      showSnackBar: false,
+      newsData: []
+    };
+    this.NewsService = new NewsService()
+  }
+
+  componentWillMount() {
+    this.setState({ responseMsg: ' ', showSnackBar: false });
+    this.NewsService.getNews().then(response => {
+      news = response
+      this.setState({ newsData: response.data });
+    }).catch(error => {
+      console.log(error)
+      this.setState({ responseMsg: 'Error while fetching data: ' + error.message, showSnackBar: true });
+    });
+  }
+
   render() {
-    const { newsFetch } = this.props
-    if (newsFetch.pending) {
-      return (
-        <MuiThemeProvider>
-          <CircularProgress className="center" size={100} thickness={7} />
-        </MuiThemeProvider>)
-    } else if (newsFetch.rejected) {
-      return (
-        <SnackBar msg={newsFetch.reason.message}
-          open={true} />
-      )
-    } else if (newsFetch.fulfilled) {
-      return (
-        <NewsList {...newsFetch} />
-      )
-    }
+    return (
+      <div>
+        {this.state.showSnackBar ? <SnackBar msg={this.state.responseMsg} open={true} /> :
+          this.state.newsData.length > 0 ? <NewsList {...news} /> :
+            <MuiThemeProvider><CircularProgress className="center" size={100} thickness={7} /></MuiThemeProvider>}
+      </div>
+    )
   }
 }
-
-export default connect(props => ({
-  newsFetch: `http://localhost:63145/api/messages`
-}))(NewsFeed)
+export default NewsFeed
