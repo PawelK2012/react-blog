@@ -35,13 +35,14 @@ class Navbar extends Component {
 };
 
   toggle = () => {
-    this.setState((prevState, props) => {
+    this.setState((prevState) => {
       // set it to oposite of prevState.open
       return {
         open: !prevState.open
       }
     })
   }
+
   render() {
     return (
       <div>
@@ -86,4 +87,3 @@ class Navbar extends Component {
   }
 }
 export default Navbar
-

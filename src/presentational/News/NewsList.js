@@ -24,7 +24,6 @@ const styles = {
 class NewsList extends Component {
 
     render() {
-        console.log('ttt ',this)
         return (
             <MuiThemeProvider>
                 <div style={styles.root}>

@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import { connect } from 'react-refetch'
 import NewsList from '../presentational/News/NewsList'
 import CircularProgress from 'material-ui/CircularProgress'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
