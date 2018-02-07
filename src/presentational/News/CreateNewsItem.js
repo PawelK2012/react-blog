@@ -33,6 +33,15 @@ export const CreateNewsItem = ({ title, subTitle, text, owner, img, featured, on
       img: _img.getValue(),
       featured: _featured.state.switched
     })
+    clearForm()
+  }
+
+  const clearForm = () => {
+    _title.input.value=""
+    _subTitle.input.value=""
+    _text.getInputNode().value=""
+    _img.input.value=""
+    _featured.state.switched = false
   }
 
   return (
@@ -43,6 +52,7 @@ export const CreateNewsItem = ({ title, subTitle, text, owner, img, featured, on
           id={'title'}
           hintText="Title"
           ref={input => _title = input}
+          //ref={title}
           fullWidth={true}
           style={styles.textField}
         />
@@ -76,7 +86,7 @@ export const CreateNewsItem = ({ title, subTitle, text, owner, img, featured, on
           />
         </div>
         <RaisedButton label="Save" onClick={save} secondary={true} style={styles.button} />
-        <RaisedButton label="Clear" primary={true} style={styles.button} />
+        <RaisedButton label="Clear" onClick={clearForm} primary={true} style={styles.button} />
       </form>
     </div>
   )
