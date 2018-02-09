@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import TextField from 'material-ui/TextField'
 import Toggle from 'material-ui/Toggle'
 import RaisedButton from 'material-ui/RaisedButton'
@@ -45,6 +46,7 @@ export const CreateNewsItem = ({ title, subTitle, text, owner, img, featured, on
   }
 
   return (
+    <MuiThemeProvider>
     <div className="create-news-container">
       <p>Create news</p>
       <form onSubmit={save} className="create-news-form">
@@ -89,6 +91,7 @@ export const CreateNewsItem = ({ title, subTitle, text, owner, img, featured, on
         <RaisedButton label="Clear" onClick={clearForm} primary={true} style={styles.button} />
       </form>
     </div>
+    </MuiThemeProvider>
   )
 }
 
